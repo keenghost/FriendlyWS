@@ -1,7 +1,7 @@
 {
   "name": "friendly-ws",
   "version": "0.0.0-alpha0",
-  "description": "use websocket with request and respose in nodejs or browser",
+  "description": "Encapsulation of Websocket with Request & Respose in NodeJS and Browser",
   "keywords": [
     "friendly",
     "websocket",
