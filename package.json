@@ -1,0 +1,80 @@
+{
+  "name": "friendly-ws",
+  "version": "0.0.0-alpha0",
+  "description": "use websocket with request and respose in nodejs or browser",
+  "keywords": [
+    "friendly",
+    "websocket",
+    "ws",
+    "request",
+    "response"
+  ],
+  "author": "keenghost",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenghost/NodeFriendlyWS.git"
+  },
+  "dependencies": {
+    "mitt": "^3.0.1",
+    "nanoid": "^3.3.7",
+    "ws": "^8.15.1"
+  },
+  "type": "module",
+  "main": "./index.ts",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "ts-check": "tsc --incremental --noEmit",
+    "cm-check": "tsx scripts/check-commit-msg.ts",
+    "dev:node": "tsx test/node/index.ts",
+    "dev:browser": "cd test/browser && vite",
+    "build": "tsx scripts/build.ts",
+    "publish": "cd dist && npm publish"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20.10.5",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "lint-staged": "^15.2.0",
+    "picocolors": "^1.0.0",
+    "prettier": "^3.1.1",
+    "simple-git-hooks": "^2.9.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm ts-check",
+    "commit-msg": "pnpm cm-check"
+  },
+  "lint-staged": {
+    "*.{js,cjs,ts}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "moduleOptions": {
+    "main": "./index.mjs",
+    "module": "./index.mjs",
+    "types": "./index.d.ts",
+    "files": [
+      "src",
+      "index.d.ts",
+      "index.js",
+      "index.mjs"
+    ],
+    "exports": {
+      ".": {
+        "types": "./index.d.ts",
+        "import": "./index.mjs",
+        "require": "./index.js"
+      }
+    }
+  }
+}
