@@ -25,7 +25,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "postinstall": "simple-git-hooks",
-    "ts-check": "tsc --incremental --noEmit",
+    "ts-check": "tsc --noEmit",
     "cm-check": "tsx scripts/check-commit-msg.ts",
     "dev:node": "tsx test/node/index.ts",
     "dev:browser": "cd test/browser && vite",
