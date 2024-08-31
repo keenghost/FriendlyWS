@@ -1,0 +1,67 @@
+{
+  "name": "friendly-ws",
+  "version": "0.1.0-alpha.1",
+  "description": "Encapsulation of Websocket with Request & Respose in NodeJS and Browser",
+  "keywords": [
+    "friendly",
+    "websocket",
+    "ws",
+    "request",
+    "response"
+  ],
+  "author": "keenghost",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenghost/NodeFriendlyWS.git"
+  },
+  "type": "module",
+  "main": "./index.ts",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^16.18.106",
+    "eslint": "^9.9.1",
+    "lint-staged": "^15.2.9",
+    "picocolors": "^1.0.1",
+    "prettier": "^3.3.3",
+    "simple-git-hooks": "^2.11.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm tsc --incremental --noEmit",
+    "commit-msg": "pnpm tsx scripts/check-commit-msg.ts"
+  },
+  "lint-staged": {
+    "*.{js,cjs,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "moduleOptions": {
+    "main": "./index.mjs",
+    "module": "./index.mjs",
+    "types": "./index.d.ts",
+    "files": [
+      "src",
+      "index.d.ts",
+      "index.js",
+      "index.mjs"
+    ],
+    "exports": {
+      ".": {
+        "types": "./index.d.ts",
+        "import": "./index.mjs",
+        "require": "./index.js"
+      }
+    }
+  }
+}
