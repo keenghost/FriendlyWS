@@ -1,6 +1,6 @@
 {
   "name": "friendly-ws",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Encapsulation of Websocket with Request & Respose in NodeJS and Browser",
   "keywords": [
     "friendly",
@@ -25,7 +25,7 @@
     "postinstall": "simple-git-hooks",
     "test": "tsx test/index.test.ts",
     "build": "tsx scripts/build.ts",
-    "publish": "cd dist && npm publish"
+    "release": "cd dist && npm publish"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
