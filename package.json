@@ -1,6 +1,6 @@
 {
   "name": "friendly-ws",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Encapsulation of Websocket with Request & Respose in NodeJS and Browser",
   "keywords": [
     "friendly",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keenghost/NodeFriendlyWS.git"
+    "url": "git+https://github.com/keenghost/FriendlyWS.git"
   },
   "type": "module",
   "main": "./index.ts",
