@@ -54,7 +54,8 @@
   "lint-staged": {
     "*.{js,cjs,ts,tsx}": [
       "eslint",
-      "prettier --write"
+      "prettier --write",
+      "pnpm tsx scripts/check-modules.ts"
     ],
     "*.json": [
       "prettier --write"
