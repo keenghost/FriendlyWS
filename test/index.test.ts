@@ -1,5 +1,5 @@
-import child_process from 'child_process'
-import http from 'http'
+import child_process from 'node:child_process'
+import http from 'node:http'
 import puppeteer, { Browser } from 'puppeteer'
 import {
   IWSRequestError,

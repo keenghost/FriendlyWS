@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 const pnpmlock = fs.readFileSync('pnpm-lock.yaml', { encoding: 'utf-8' })
 

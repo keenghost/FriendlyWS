@@ -1,5 +1,5 @@
-import http, { IncomingMessage } from 'http'
-import internal from 'stream'
+import http, { IncomingMessage } from 'node:http'
+import type internal from 'node:stream'
 import ws, { WebSocketServer } from 'ws'
 import { IWSBaseInitOptions, WSBase } from './class/ws-base'
 import { RemoteClient } from './client-remote'
