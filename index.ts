@@ -7,11 +7,3 @@ import { WSNodeServer } from './src/server-node'
 export * from './src/common/types-export'
 
 export { WSWebClient, WSNodeClient, WSNodeServer, WSClientRouter, WSServerRouter }
-
-export default {
-  WSWebClient,
-  WSNodeClient,
-  WSNodeServer,
-  WSClientRouter,
-  WSServerRouter,
-}

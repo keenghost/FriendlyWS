@@ -1,17 +1,9 @@
 const fs = require('fs')
 
-const cjsPath = '../dist/index.js'
-const FriendlyWS = require(cjsPath)
 const mjs = []
 
-mjs.push("import FriendlyWS from './index.js';")
+mjs.push('import * as all from "./index.js";')
+mjs.push('export * from "./index.js";')
+mjs.push('export default all;')
 
-for (const key in FriendlyWS) {
-  if (key !== 'default') {
-    mjs.push(`export const ${key} = FriendlyWS.${key};`)
-  }
-}
-
-mjs.push(`export default FriendlyWS;`)
-
-fs.writeFileSync('dist/index.mjs', mjs.join('\n'))
+fs.writeFileSync('dist/index.mjs', mjs.join('\n') + '\n')
