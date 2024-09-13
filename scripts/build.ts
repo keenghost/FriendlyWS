@@ -35,4 +35,10 @@ fs.writeFileSync('dist/package.json', JSON.stringify(newpackagejson, null, 2))
 fs.copyFileSync('LICENSE', 'dist/LICENSE')
 fs.copyFileSync('README.md', 'dist/README.md')
 
-child_process.execSync('node scripts/esm.cjs')
+const mjs: string[] = []
+
+mjs.push('import * as all from "./index.js";')
+mjs.push('export * from "./index.js";')
+mjs.push('export default all;')
+
+fs.writeFileSync('dist/index.mjs', mjs.join('\n') + '\n')
