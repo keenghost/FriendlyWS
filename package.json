@@ -22,7 +22,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "simple-git-hooks",
+    "postinstall": "simple-git-hooks && tsx scripts/post-install.ts",
     "test": "tsx test/index.test.ts",
     "build": "tsx scripts/build.ts",
     "release": "cd dist && npm publish"
