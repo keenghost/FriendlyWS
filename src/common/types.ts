@@ -4,14 +4,14 @@ export const PUBLIC_ONCLOSE = Symbol()
 export const PUBLIC_ONERROR = Symbol()
 export const PUBLIC_ONREQUEST = Symbol()
 
-export const enum EMsgType {
+export enum EMsgType {
   NORECORD = -1,
   REQUEST = 0,
   RESPONSE = 1,
   ERROR = 2,
 }
 
-export const enum EWSErrorCode {
+export enum EWSErrorCode {
   DEFAULT = 1,
   HANDLER = 2,
   SEND_PING = 3,
@@ -21,7 +21,7 @@ export const enum EWSErrorCode {
   SEND_ERROR = 7,
 }
 
-export const enum EWSLogCode {
+export enum EWSLogCode {
   CLOSED = 1,
   LISTENING = 2,
   CONNECTED = 3,
