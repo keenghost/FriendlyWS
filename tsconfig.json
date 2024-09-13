@@ -14,5 +14,5 @@
     "noEmit": true,
     "declaration": false
   },
-  "include": ["src/**/*", "index.ts"]
+  "include": ["scripts", "src", "test", "index.ts"]
 }
