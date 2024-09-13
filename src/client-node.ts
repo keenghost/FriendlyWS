@@ -2,7 +2,7 @@ import { WebSocket } from 'ws'
 import { ClientLocalBase, IClientLocalBaseInitOptions } from './class/client-local-base'
 import { ECloseCode, ECloseCodeStr, EWSErrorCode, ISendData, PUBLIC_SEND } from './common/types'
 
-interface IClientNodeInitOptions extends IClientLocalBaseInitOptions {}
+export interface IClientNodeInitOptions extends IClientLocalBaseInitOptions {}
 
 export class WSNodeClient extends ClientLocalBase {
   #ws: WebSocket

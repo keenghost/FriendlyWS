@@ -10,7 +10,7 @@ import {
   PUBLIC_SEND,
 } from './common/types'
 
-interface IClientRemoteInitOptions extends IClientBaseInitOptions {
+export interface IClientRemoteInitOptions extends IClientBaseInitOptions {
   id: string
   ws: ws
 }

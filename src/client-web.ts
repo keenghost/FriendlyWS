@@ -1,7 +1,7 @@
 import { ClientLocalBase, IClientLocalBaseInitOptions } from './class/client-local-base'
 import { ECloseCode, ECloseCodeStr, EWSErrorCode, ISendData, PUBLIC_SEND } from './common/types'
 
-interface IClientWebInitOptions extends IClientLocalBaseInitOptions {}
+export interface IClientWebInitOptions extends IClientLocalBaseInitOptions {}
 
 export class WSWebClient extends ClientLocalBase {
   #ws: WebSocket

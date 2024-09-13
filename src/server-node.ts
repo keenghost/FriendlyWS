@@ -21,7 +21,7 @@ import {
 } from './common/types'
 import { nanoid, newMsgStr } from './common/utils'
 
-interface IServerNodeInitOptions<TRemoteClientExInfo = any> extends IWSBaseInitOptions {
+export interface IServerNodeInitOptions<TRemoteClientExInfo = any> extends IWSBaseInitOptions {
   port?: number
   httpServer?: http.Server
   onPreConnect?: (inToken: string, inUrl: string) => Promise<string | void>
@@ -40,7 +40,7 @@ interface IServerNodeInitOptions<TRemoteClientExInfo = any> extends IWSBaseInitO
   ) => void
 }
 
-interface IServerContext<TRequestBody = any, TResponseBody = any, TRequestHeaders = any>
+export interface IServerContext<TRequestBody = any, TResponseBody = any, TRequestHeaders = any>
   extends IContext<TRequestBody, TResponseBody, TRequestHeaders> {
   remoteClient: RemoteClient
 }

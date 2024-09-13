@@ -15,13 +15,13 @@ import { IWSBaseInitOptions, WSBase } from './ws-base'
 
 export interface IClientBaseInitOptions extends IWSBaseInitOptions {}
 
-interface IRequestExtra {
+export interface IRequestExtra {
   noResponse?: boolean
   unique?: string
   headers?: Record<any, any>
 }
 
-interface IResponseStruct {
+export interface IResponseStruct {
   res: (inData: any) => void
   rej: (inErr: Error) => void
 }
