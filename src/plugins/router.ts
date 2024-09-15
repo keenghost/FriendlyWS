@@ -1,4 +1,4 @@
-import { IContext, IRequestHandler } from '../common/types'
+import type { IContext, IRequestHandler } from '../common/types'
 
 export class WSRouter {
   protected _handlers: Map<string, IRequestHandler[]> = new Map()

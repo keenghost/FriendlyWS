@@ -1,5 +1,5 @@
 import type { IWSRequestError } from './types'
 
-export { EWSErrorCode, EWSLogCode } from './types'
+export type { IWSRequestError }
 
-export { IWSRequestError }
+export { EWSErrorCode, EWSLogCode } from './types'

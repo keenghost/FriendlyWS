@@ -2,16 +2,19 @@ import {
   EMsgType,
   EWSErrorCode,
   EWSLogCode,
+  PUBLIC_ONREQUEST,
+  PUBLIC_SEND,
+} from '../common/types'
+import type {
   IMessage,
   IMessageRaw,
   IOnMessageData,
   ISendData,
   IWSRequestError,
-  PUBLIC_ONREQUEST,
-  PUBLIC_SEND,
 } from '../common/types'
 import { newMsgStr, toJSON } from '../common/utils'
-import { IWSBaseInitOptions, WSBase } from './ws-base'
+import { WSBase } from './ws-base'
+import { IWSBaseInitOptions } from './ws-base'
 
 export interface IClientBaseInitOptions extends IWSBaseInitOptions {}
 

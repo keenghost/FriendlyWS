@@ -1,12 +1,11 @@
 import {
   ECloseCodeStr,
   EWSLogCode,
-  IWSErrorStruct,
-  IWSLogStruct,
   PUBLIC_ONCLOSE,
   PUBLIC_ONERROR,
   PUBLIC_ONLOG,
 } from '../common/types'
+import type { IWSErrorStruct, IWSLogStruct } from '../common/types'
 import { PromBat } from '../common/utils'
 
 export interface IWSBaseInitOptions {

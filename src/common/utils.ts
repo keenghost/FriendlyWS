@@ -1,4 +1,4 @@
-import { IMessage } from './types'
+import type { IMessage } from './types'
 
 export function toJSON<T>(inStr: string, inDefault: T) {
   try {
