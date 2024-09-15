@@ -62,20 +62,21 @@
     ]
   },
   "moduleOptions": {
-    "main": "./index.mjs",
-    "module": "./index.mjs",
+    "type": "module",
+    "main": "./index.js",
+    "module": "./index.js",
     "types": "./index.d.ts",
     "files": [
       "src",
       "index.d.ts",
       "index.js",
-      "index.mjs"
+      "index.cjs"
     ],
     "exports": {
       ".": {
         "types": "./index.d.ts",
-        "import": "./index.mjs",
-        "require": "./index.js"
+        "import": "./index.js",
+        "require": "./index.cjs"
       }
     }
   }

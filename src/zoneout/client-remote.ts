@@ -1,14 +1,15 @@
-import ws, { WebSocket } from 'ws'
-import { ClientBase, IClientBaseInitOptions } from './class/client-base'
+import { WebSocket } from 'ws'
+import type ws from 'ws'
+import { ClientBase } from '../class/client-base'
+import type { IClientBaseInitOptions } from '../class/client-base'
 import {
   ECloseCode,
   ECloseCodeStr,
   EWSErrorCode,
-  IMessage,
-  ISendData,
   PUBLIC_ONREQUEST,
   PUBLIC_SEND,
-} from './common/types'
+} from '../common/types'
+import type { IMessage, ISendData } from '../common/types'
 
 export interface IClientRemoteInitOptions extends IClientBaseInitOptions {
   id: string

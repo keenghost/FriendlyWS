@@ -1,13 +1,14 @@
-import { WebSocket } from 'ws'
-import { ClientLocalBase, IClientLocalBaseInitOptions } from './class/client-local-base'
-import { ECloseCode, ECloseCodeStr, EWSErrorCode, ISendData, PUBLIC_SEND } from './common/types'
+import { ClientLocalBase } from '../class/client-local-base'
+import { IClientLocalBaseInitOptions } from '../class/client-local-base'
+import { ECloseCode, ECloseCodeStr, EWSErrorCode, PUBLIC_SEND } from '../common/types'
+import { ISendData } from '../common/types'
 
-export interface IClientNodeInitOptions extends IClientLocalBaseInitOptions {}
+export interface IClientWebInitOptions extends IClientLocalBaseInitOptions {}
 
-export class WSNodeClient extends ClientLocalBase {
+export class WSWebClient extends ClientLocalBase {
   #ws: WebSocket
 
-  constructor(inOpts: IClientNodeInitOptions) {
+  constructor(inOpts: IClientWebInitOptions) {
     super(inOpts)
 
     const protocols: string[] = []
@@ -23,18 +24,17 @@ export class WSNodeClient extends ClientLocalBase {
     }
 
     this.#ws.onmessage = inEvt => {
-      this._onMessage(inEvt.data, inEvt.data instanceof Buffer)
+      const isBinary = inEvt.data instanceof Blob
+
+      this._onMessage(inEvt.data, isBinary)
     }
 
     this.#ws.onclose = inEvt => {
       this._onClose(inEvt.code, inEvt.reason)
     }
 
-    this.#ws.onerror = inEvt => {
-      this._onError({
-        code: EWSErrorCode.DEFAULT,
-        error: inEvt.error,
-      })
+    this.#ws.onerror = () => {
+      this._onError({ code: EWSErrorCode.DEFAULT, error: new Error('websocket error') })
     }
   }
 
@@ -51,9 +51,8 @@ export class WSNodeClient extends ClientLocalBase {
         return reject(new Error('websocket is not open'))
       }
 
-      this.#ws.send(inData, inError => {
-        inError ? reject(inError) : resolve()
-      })
+      this.#ws.send(inData)
+      resolve()
     })
   }
 }

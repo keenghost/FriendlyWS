@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "../dist",
-    "module": "CommonJS",
+    "module": "ES2020",
     "noEmit": false,
     "declaration": true
   },

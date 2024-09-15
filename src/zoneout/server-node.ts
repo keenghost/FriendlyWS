@@ -1,25 +1,25 @@
-import http, { IncomingMessage } from 'node:http'
+import http from 'node:http'
+import type { IncomingMessage } from 'node:http'
 import type internal from 'node:stream'
-import ws, { WebSocketServer } from 'ws'
-import { IWSBaseInitOptions, WSBase } from './class/ws-base'
-import { RemoteClient } from './client-remote'
+import { WebSocketServer } from 'ws'
+import type ws from 'ws'
+import { WSBase } from '../class/ws-base'
+import type { IWSBaseInitOptions } from '../class/ws-base'
 import {
   ECloseCode,
   ECloseCodeStr,
   EMsgType,
   EWSErrorCode,
   EWSLogCode,
-  IContext,
-  IMessage,
-  IWSErrorStruct,
-  IWSLogStruct,
   PUBLIC_ONCLOSE,
   PUBLIC_ONERROR,
   PUBLIC_ONLOG,
   PUBLIC_ONREQUEST,
   PUBLIC_SEND,
-} from './common/types'
-import { nanoid, newMsgStr } from './common/utils'
+} from '../common/types'
+import { IContext, IMessage, IWSErrorStruct, IWSLogStruct } from '../common/types'
+import { nanoid, newMsgStr } from '../common/utils'
+import { RemoteClient } from './client-remote'
 
 export interface IServerNodeInitOptions<TRemoteClientExInfo = any> extends IWSBaseInitOptions {
   port?: number
