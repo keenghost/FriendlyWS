@@ -1,18 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "ES2016",
-    "module": "ES2020",
-    "moduleResolution": "Node",
-    "lib": ["ES2020", "DOM"],
-
-    "strict": true,
-    "skipLibCheck": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "esModuleInterop": true,
-
-    "noEmit": true,
-    "declaration": false
-  },
-  "include": ["scripts", "src", "test", "index.ts"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfigs/tsconfig.dom.json"
+    },
+    {
+      "path": "./tsconfigs/tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfigs/tsconfig.source.json"
+    }
+  ]
 }

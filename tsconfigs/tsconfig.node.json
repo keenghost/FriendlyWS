@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {},
+  "include": ["../scripts", "../test"],
+  "exclude": ["../test/browser.test.ts"],
+  "extends": "./tsconfig.base.json"
+}

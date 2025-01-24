@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "outDir": "../dist",
+    "declaration": true,
+    "tsBuildInfoFile": "./tsconfig.source.tsbuildinfo"
+  },
+  "include": ["../src", "../index.ts", "../types.ts"],
+  "extends": "./tsconfig.base.json"
+}
