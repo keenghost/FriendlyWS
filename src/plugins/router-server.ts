@@ -1,6 +1,6 @@
-import { type IServerRequestHandler } from '../main/server-node'
-import { type IRequestHandler } from '../types/common'
-import { WSRouter } from './router'
+import { type IServerRequestHandler } from '../main/server-node.js'
+import { type IRequestHandler } from '../types/common.js'
+import { WSRouter } from './router.js'
 
 export type IGetFunction = (inPath: string, ...args: IServerRequestHandler[]) => void
 

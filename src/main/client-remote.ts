@@ -1,10 +1,10 @@
 import { WebSocket } from 'ws'
 import type ws from 'ws'
-import { ClientBase } from '../class/client-base'
-import { type IClientBaseInitOptions } from '../class/client-base'
-import { type IMessage, type ISendData } from '../types/common'
-import { ECloseCode, ECloseCodeStr, PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const'
-import { EWSErrorCode } from '../types/enums'
+import { ClientBase } from '../class/client-base.js'
+import { type IClientBaseInitOptions } from '../class/client-base.js'
+import { type IMessage, type ISendData } from '../types/common.js'
+import { ECloseCode, ECloseCodeStr, PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const.js'
+import { EWSErrorCode } from '../types/enums.js'
 
 export interface IClientRemoteInitOptions extends IClientBaseInitOptions {
   id: string

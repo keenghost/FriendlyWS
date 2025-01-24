@@ -1,15 +1,15 @@
-import { newMsgStr, toJSON } from '../common/utils'
+import { newMsgStr, toJSON } from '../common/utils.js'
 import {
   type IMessage,
   type IMessageRaw,
   type IOnMessageData,
   type ISendData,
   type IWSRequestError,
-} from '../types/common'
-import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const'
-import { EMsgType, EWSErrorCode, EWSLogCode } from '../types/enums'
-import { WSBase } from './ws-base'
-import { IWSBaseInitOptions } from './ws-base'
+} from '../types/common.js'
+import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const.js'
+import { EMsgType, EWSErrorCode, EWSLogCode } from '../types/enums.js'
+import { WSBase } from './ws-base.js'
+import { IWSBaseInitOptions } from './ws-base.js'
 
 export interface IClientBaseInitOptions extends IWSBaseInitOptions {}
 

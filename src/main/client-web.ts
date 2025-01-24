@@ -1,8 +1,8 @@
-import { ClientLocalBase } from '../class/client-local-base'
-import { type IClientLocalBaseInitOptions } from '../class/client-local-base'
-import { type ISendData } from '../types/common'
-import { ECloseCode, ECloseCodeStr, PUBLIC_SEND } from '../types/const'
-import { EWSErrorCode } from '../types/enums'
+import { ClientLocalBase } from '../class/client-local-base.js'
+import { type IClientLocalBaseInitOptions } from '../class/client-local-base.js'
+import { type ISendData } from '../types/common.js'
+import { ECloseCode, ECloseCodeStr, PUBLIC_SEND } from '../types/const.js'
+import { EWSErrorCode } from '../types/enums.js'
 
 export interface IClientWebInitOptions extends IClientLocalBaseInitOptions {}
 

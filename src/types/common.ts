@@ -1,4 +1,4 @@
-import { EMsgType, EWSErrorCode, EWSLogCode } from './enums'
+import { EMsgType, EWSErrorCode, EWSLogCode } from './enums.js'
 
 export interface IMessage {
   type: EMsgType

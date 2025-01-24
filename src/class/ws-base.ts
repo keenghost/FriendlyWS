@@ -1,7 +1,7 @@
-import { PromBat } from '../common/utils'
-import { type IWSErrorStruct, type IWSLogStruct } from '../types/common'
-import { ECloseCodeStr, PUBLIC_ONCLOSE, PUBLIC_ONERROR, PUBLIC_ONLOG } from '../types/const'
-import { EWSLogCode } from '../types/enums'
+import { PromBat } from '../common/utils.js'
+import { type IWSErrorStruct, type IWSLogStruct } from '../types/common.js'
+import { ECloseCodeStr, PUBLIC_ONCLOSE, PUBLIC_ONERROR, PUBLIC_ONLOG } from '../types/const.js'
+import { EWSLogCode } from '../types/enums.js'
 
 export interface IWSBaseInitOptions {
   onOpen?: () => void

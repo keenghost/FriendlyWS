@@ -1,4 +1,4 @@
-import { type IMessage } from '../types/common'
+import { type IMessage } from '../types/common.js'
 
 export function toJSON<T>(inStr: string, inDefault: T) {
   try {
