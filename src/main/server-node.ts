@@ -1,10 +1,7 @@
-import http from 'node:http'
-import { type IncomingMessage } from 'node:http'
+import http, { type IncomingMessage } from 'node:http'
 import type internal from 'node:stream'
-import { WebSocketServer } from 'ws'
-import type ws from 'ws'
-import { WSBase } from '../class/ws-base.js'
-import { type IWSBaseInitOptions } from '../class/ws-base.js'
+import { WebSocketServer, type default as ws } from 'ws'
+import { type IWSBaseInitOptions, WSBase } from '../class/ws-base.js'
 import { nanoid, newMsgStr } from '../common/utils.js'
 import {
   type IContext,

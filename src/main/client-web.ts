@@ -1,5 +1,7 @@
-import { ClientLocalBase } from '../class/client-local-base.js'
-import { type IClientLocalBaseInitOptions } from '../class/client-local-base.js'
+import {
+  ClientLocalBase,
+  type IClientLocalBaseInitOptions,
+} from '../class/client-local-base.js'
 import { type ISendData } from '../types/common.js'
 import { ECloseCode, ECloseCodeStr, PUBLIC_SEND } from '../types/const.js'
 import { EWSErrorCode } from '../types/enums.js'

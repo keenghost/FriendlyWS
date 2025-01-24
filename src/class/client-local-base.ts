@@ -2,8 +2,7 @@ import { newMsgStr } from '../common/utils.js'
 import { type IContext, type IMessage, type IRequestHandler } from '../types/common.js'
 import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const.js'
 import { EMsgType, EWSErrorCode } from '../types/enums.js'
-import { ClientBase } from './client-base.js'
-import { type IClientBaseInitOptions } from './client-base.js'
+import { ClientBase, type IClientBaseInitOptions } from './client-base.js'
 
 export interface IClientLocalBaseInitOptions extends IClientBaseInitOptions {
   url: string

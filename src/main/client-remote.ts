@@ -1,7 +1,5 @@
-import { WebSocket } from 'ws'
-import type ws from 'ws'
-import { ClientBase } from '../class/client-base.js'
-import { type IClientBaseInitOptions } from '../class/client-base.js'
+import { WebSocket, type default as ws } from 'ws'
+import { ClientBase, type IClientBaseInitOptions } from '../class/client-base.js'
 import { type IMessage, type ISendData } from '../types/common.js'
 import { ECloseCode, ECloseCodeStr, PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const.js'
 import { EWSErrorCode } from '../types/enums.js'
@@ -60,7 +58,11 @@ export class RemoteClient<TExInfo = any> extends ClientBase {
       }
 
       this.#ws.send(inData, inError => {
-        inError ? reject(inError) : resolve()
+        if (inError) {
+          return reject(inError)
+        }
+
+        resolve()
       })
     })
   };

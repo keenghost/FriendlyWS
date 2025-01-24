@@ -8,8 +8,7 @@ import {
 } from '../types/common.js'
 import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const.js'
 import { EMsgType, EWSErrorCode, EWSLogCode } from '../types/enums.js'
-import { WSBase } from './ws-base.js'
-import { IWSBaseInitOptions } from './ws-base.js'
+import { type IWSBaseInitOptions, WSBase } from './ws-base.js'
 
 export interface IClientBaseInitOptions extends IWSBaseInitOptions {}
 

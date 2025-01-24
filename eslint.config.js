@@ -1,12 +1,16 @@
 import tsESLint from 'typescript-eslint'
 
-export default tsESLint.config({
+export default tsESLint.config(...tsESLint.configs.recommended, {
   files: ['**/*.js', '**/*.cjs', '**/*.ts', '**/*.tsx'],
-  extends: [tsESLint.configs.base],
   rules: {
     eqeqeq: 'error',
     'newline-before-return': 'error',
     'no-debugger': 'error',
+    'no-duplicate-imports': 'error',
+
+    '@typescript-eslint/no-empty-object-type': 'off',
+
+    '@typescript-eslint/no-explicit-any': 'off',
 
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -44,11 +48,6 @@ export default tsESLint.config({
       'error',
       {
         enforce: [
-          //   {
-          //     blankLine: 'never',
-          //     prev: 'field',
-          //     next: 'field',
-          //   },
           {
             blankLine: 'always',
             prev: '*',

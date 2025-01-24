@@ -1,7 +1,6 @@
 import child_process from 'node:child_process'
 import http from 'node:http'
-import puppeteer from 'puppeteer'
-import { type Browser } from 'puppeteer'
+import puppeteer, { type Browser } from 'puppeteer'
 import { WSClientRouter, WSNodeClient, WSNodeServer, WSServerRouter } from '../index'
 import { type IWSRequestError } from '../types'
 import { describe, expect, it, proms, runTest } from './test-suite'
