@@ -1,5 +1,5 @@
+import { type IServerRequestHandler } from '../main/server-node'
 import { type IRequestHandler } from '../types/common'
-import { type IServerRequestHandler } from '../zoneout/server-node'
 import { WSRouter } from './router'
 
 export type IGetFunction = (inPath: string, ...args: IServerRequestHandler[]) => void
