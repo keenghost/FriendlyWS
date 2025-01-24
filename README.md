@@ -1,5 +1,14 @@
 # Javascript Friendly WebSocket
 
+<p align="center">
+    <img src="https://img.shields.io/badge/node-≥18-green" alt="">
+    <img src="https://img.shields.io/badge/pnpm-^9-orange" alt="">
+    <br>
+    <img src="https://img.shields.io/github/license/keenghost/FriendlyWS?color=purple" alt="">
+    <img src="https://img.shields.io/github/commit-activity/m/keenghost/FriendlyWS?color=red" alt="">
+    <img src="https://img.shields.io/github/stars/keenghost/FriendlyWS?style=social" alt="">
+</p>
+
 ### Installation
 
 ```
