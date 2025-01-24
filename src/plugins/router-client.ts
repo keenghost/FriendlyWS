@@ -1,4 +1,4 @@
-import type { IRequestHandler } from '../common/types'
+import { type IRequestHandler } from '../types/common'
 import { WSRouter } from './router'
 
 export type IGetFunction = (inPath: string, ...args: IRequestHandler[]) => void

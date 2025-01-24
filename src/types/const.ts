@@ -4,32 +4,6 @@ export const PUBLIC_ONCLOSE = Symbol()
 export const PUBLIC_ONERROR = Symbol()
 export const PUBLIC_ONREQUEST = Symbol()
 
-export enum EMsgType {
-  NORECORD = -1,
-  REQUEST = 0,
-  RESPONSE = 1,
-  ERROR = 2,
-}
-
-export enum EWSErrorCode {
-  DEFAULT = 1,
-  HANDLER = 2,
-  SEND_PING = 3,
-  SEND_PONG = 4,
-  SEND_REQUEST = 5,
-  SEND_RESPONSE = 6,
-  SEND_ERROR = 7,
-}
-
-export enum EWSLogCode {
-  CLOSED = 1,
-  LISTENING = 2,
-  CONNECTED = 3,
-  RECIEVED_BINARY = 4,
-  RECIEVED_MESSAGE = 5,
-  RECIEVED_HEARTBEAT = 6,
-}
-
 export const ECloseCode = {
   C1000: 1000,
   C1001: 1001,
@@ -84,49 +58,3 @@ export const ECloseCodeStr: Record<number, string> = {
 // - 1013: Try Again Later - This code is used when the server is temporarily unavailable and the client should try again later.
 // - 1014: Reserved - This code is reserved and should not be used.
 // - 1015: TLS Handshake Failure - This code is used when the connection was closed due to a TLS handshake failure.
-
-export interface IMessage {
-  type: EMsgType
-  uniqueId: number
-  path: string
-  headers: Record<string, any>
-  body: any
-}
-
-// [type, uniqueId, path, headers, body]
-export type IMessageRaw = [EMsgType, number, string, Record<string, any>, any]
-
-export type IOnMessageData = string | Buffer | ArrayBuffer | Buffer[]
-
-export type ISendData = string | Buffer | ArrayBuffer
-
-export type IRequestHandler<TRequestBody = any, TResponseBody = any, TRequestHeaders = any> = (
-  inContext: IContext<TRequestBody, TResponseBody, TRequestHeaders>
-) => Promise<void>
-
-export interface IContext<TRequestBody = any, TResponseBody = any, TRequestHeaders = any> {
-  request: {
-    path: string
-    headers: Record<string, any> & TRequestHeaders
-    body: TRequestBody
-  }
-  body?: TResponseBody
-  errorMessage?: string
-  errorContent?: any
-}
-
-export interface IWSLogStruct {
-  code: EWSLogCode
-  text: string
-  extra?: any
-}
-
-export interface IWSErrorStruct {
-  code: EWSErrorCode
-  error: Error
-  extra?: any
-}
-
-export interface IWSRequestError<TContent = any> extends Error {
-  content?: TContent
-}

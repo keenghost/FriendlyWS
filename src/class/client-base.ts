@@ -1,18 +1,13 @@
-import {
-  EMsgType,
-  EWSErrorCode,
-  EWSLogCode,
-  PUBLIC_ONREQUEST,
-  PUBLIC_SEND,
-} from '../common/types'
-import type {
-  IMessage,
-  IMessageRaw,
-  IOnMessageData,
-  ISendData,
-  IWSRequestError,
-} from '../common/types'
 import { newMsgStr, toJSON } from '../common/utils'
+import {
+  type IMessage,
+  type IMessageRaw,
+  type IOnMessageData,
+  type ISendData,
+  type IWSRequestError,
+} from '../types/common'
+import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const'
+import { EMsgType, EWSErrorCode, EWSLogCode } from '../types/enums'
 import { WSBase } from './ws-base'
 import { IWSBaseInitOptions } from './ws-base'
 

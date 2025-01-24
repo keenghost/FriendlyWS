@@ -1,8 +1,9 @@
-import { EMsgType, EWSErrorCode, PUBLIC_ONREQUEST, PUBLIC_SEND } from '../common/types'
-import type { IContext, IMessage, IRequestHandler } from '../common/types'
 import { newMsgStr } from '../common/utils'
+import { type IContext, type IMessage, type IRequestHandler } from '../types/common'
+import { PUBLIC_ONREQUEST, PUBLIC_SEND } from '../types/const'
+import { EMsgType, EWSErrorCode } from '../types/enums'
 import { ClientBase } from './client-base'
-import type { IClientBaseInitOptions } from './client-base'
+import { type IClientBaseInitOptions } from './client-base'
 
 export interface IClientLocalBaseInitOptions extends IClientBaseInitOptions {
   url: string

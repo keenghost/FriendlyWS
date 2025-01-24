@@ -1,12 +1,7 @@
-import {
-  ECloseCodeStr,
-  EWSLogCode,
-  PUBLIC_ONCLOSE,
-  PUBLIC_ONERROR,
-  PUBLIC_ONLOG,
-} from '../common/types'
-import type { IWSErrorStruct, IWSLogStruct } from '../common/types'
 import { PromBat } from '../common/utils'
+import { type IWSErrorStruct, type IWSLogStruct } from '../types/common'
+import { ECloseCodeStr, PUBLIC_ONCLOSE, PUBLIC_ONERROR, PUBLIC_ONLOG } from '../types/const'
+import { EWSLogCode } from '../types/enums'
 
 export interface IWSBaseInitOptions {
   onOpen?: () => void

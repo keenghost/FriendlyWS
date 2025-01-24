@@ -1,8 +1,9 @@
 import { WebSocket } from 'ws'
 import { ClientLocalBase } from '../class/client-local-base'
-import type { IClientLocalBaseInitOptions } from '../class/client-local-base'
-import { ECloseCode, ECloseCodeStr, EWSErrorCode, PUBLIC_SEND } from '../common/types'
-import type { ISendData } from '../common/types'
+import { type IClientLocalBaseInitOptions } from '../class/client-local-base'
+import { type ISendData } from '../types/common'
+import { ECloseCode, ECloseCodeStr, PUBLIC_SEND } from '../types/const'
+import { EWSErrorCode } from '../types/enums'
 
 export interface IClientNodeInitOptions extends IClientLocalBaseInitOptions {}
 

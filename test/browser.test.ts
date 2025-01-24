@@ -1,4 +1,5 @@
-import { IWSRequestError, WSClientRouter, WSWebClient } from '../index'
+import { WSClientRouter, WSWebClient } from '../index'
+import { type IWSRequestError } from '../types'
 import { describe, expect, it, proms, runTestWeb } from './test-suite'
 
 const TOKEN = 'THE_CORRECT_TOKEN'
