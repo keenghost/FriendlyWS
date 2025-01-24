@@ -15,44 +15,42 @@
     "type": "git",
     "url": "git+https://github.com/keenghost/FriendlyWS.git"
   },
-  "type": "module",
-  "main": "./index.ts",
-  "dependencies": {
-    "@types/ws": "^8.5.12",
-    "ws": "^8.18.0"
-  },
   "engines": {
-    "node": "^18.0.0 || >= 20.0.0",
+    "node": ">=18.0.0",
     "pnpm": "^9.0.0"
+  },
+  "type": "module",
+  "files": [
+    "src",
+    "index.d.ts",
+    "index.js",
+    "types.d.ts",
+    "types.js"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./types": {
+      "types": "./types.d.ts",
+      "default": "./types.js"
+    }
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "simple-git-hooks && tsx scripts/post-install.ts",
+    "postinstall": "simple-git-hooks",
     "test": "tsx test/index.test.ts",
     "build": "tsx scripts/build.ts",
-    "release": "cd dist && npm publish"
-  },
-  "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^18.19.47",
-    "eslint": "^9.9.1",
-    "kill-port": "^2.0.1",
-    "lint-staged": "^15.2.9",
-    "picocolors": "^1.0.1",
-    "prettier": "^3.3.3",
-    "puppeteer": "^23.3.0",
-    "simple-git-hooks": "^2.11.1",
-    "tsx": "^4.19.0",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.3"
+    "release": "cd dist && npm publish",
+    "check-types": "tsx scripts/check-types.ts"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged && pnpm tsc --incremental --noEmit",
+    "pre-commit": "pnpm lint-staged && pnpm check-types",
     "commit-msg": "pnpm tsx scripts/check-commit-msg.ts"
   },
   "lint-staged": {
-    "*.{js,cjs,ts,tsx}": [
+    "*.{js,cjs,ts,tsx,vue}": [
       "eslint",
       "prettier --write",
       "pnpm tsx scripts/check-modules.ts"
@@ -61,23 +59,23 @@
       "prettier --write"
     ]
   },
-  "moduleOptions": {
-    "type": "module",
-    "main": "./index.js",
-    "module": "./index.js",
-    "types": "./index.d.ts",
-    "files": [
-      "src",
-      "index.d.ts",
-      "index.js",
-      "index.cjs"
-    ],
-    "exports": {
-      ".": {
-        "types": "./index.d.ts",
-        "import": "./index.js",
-        "require": "./index.cjs"
-      }
-    }
+  "dependencies": {
+    "@types/ws": "^8.5.13",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "@types/node": "^22.10.9",
+    "eslint": "^9.18.0",
+    "kill-port": "^2.0.1",
+    "lint-staged": "^15.4.1",
+    "picocolors": "^1.1.1",
+    "prettier": "^3.4.2",
+    "puppeteer": "^24.1.0",
+    "simple-git-hooks": "^2.11.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0",
+    "vite": "^6.0.11"
   }
 }

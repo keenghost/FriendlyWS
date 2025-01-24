@@ -8,7 +8,10 @@ try {
 
 fs.mkdirSync('dist')
 
-child_process.execSync('pnpm tsc -p scripts/tsconfig.esm.json')
+child_process.execSync('pnpm tsc -p tsconfigs/tsconfig.source.json --incremental false', {
+  stdio: 'inherit',
+})
+
 fs.writeFileSync('dist/index.cjs', "exports = module.exports = require('./index.js');\n")
 
 function importDotJs(inPath: string) {

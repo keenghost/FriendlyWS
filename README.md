@@ -12,68 +12,68 @@ pnpm add friendly-ws
 
   - use internal httpServer and onOpen to continue
 
-  ```typescript
-  import { WSNodeServer } from 'friendly-ws'
+    ```typescript
+    import { WSNodeServer } from 'friendly-ws'
 
-  const server = new WSNodeServer({
-    port: 12345,
-    onPreConnect: async (token, url) => {
-      // authentication
-      throw new Error('auth failed')
-    },
-    onConnected: async () => {},
-    onOpen: () => res(), // do things after open
-    onError: errorStruct => rej(errorStruct.error),
-  })
-  ```
+    const server = new WSNodeServer({
+      port: 12345,
+      onPreConnect: async (token, url) => {
+        // authentication
+        throw new Error('auth failed')
+      },
+      onConnected: async () => {},
+      onOpen: () => res(), // do things after open
+      onError: errorStruct => rej(errorStruct.error),
+    })
+    ```
 
   - use provided httpServer and await opened to continue
 
-  ```typescript
-  import http from 'http'
-  import { WSNodeServer } from 'friendly-ws'
+    ```typescript
+    import http from 'http'
+    import { WSNodeServer } from 'friendly-ws'
 
-  const httpServer = http.createServer()
-  httpServer.on('error', (inError: Error) => rej(inError))
-  httpServer.listen(34721)
+    const httpServer = http.createServer()
+    httpServer.on('error', (inError: Error) => rej(inError))
+    httpServer.listen(34721)
 
-  const wsServer = new WSNodeServer({
-    httpServer: httpServer,
-    onPreConnect: async (token, url) => {
-      // do token check or split your custom token from url
-    },
-    onError: errorStruct => rej(errorStruct.error),
-  })
+    const wsServer = new WSNodeServer({
+      httpServer: httpServer,
+      onPreConnect: async (token, url) => {
+        // do token check or split your custom token from url
+      },
+      onError: errorStruct => rej(errorStruct.error),
+    })
 
-  await wsServer.opened
-  ```
+    await wsServer.opened
+    ```
 
 - Create Client
 
   - Node Client
 
-  ```typescript
-  import { WSNodeClient } from 'friendly-ws'
+    ```typescript
+    import { WSNodeClient } from 'friendly-ws'
 
-  const client = new WSNodeClient({
-    url: 'ws://127.0.0.1:12345',
-    token: 'iamtoken',
-    onOpen: () => res(),
-    onError: errorStruct => rej(errorStruct.error),
-  })
-  ```
+    const client = new WSNodeClient({
+      url: 'ws://127.0.0.1:12345',
+      token: 'iamtoken',
+      onOpen: () => res(),
+      onError: errorStruct => rej(errorStruct.error),
+    })
+    ```
 
-  ```typescript
-  import { WSWebClient } from 'friendly-ws'
+    ```typescript
+    import { WSWebClient } from 'friendly-ws'
 
-  const client = new WSWebClient({
-    url: 'ws://127.0.0.1:12345',
-    token: 'iamtoken',
-    onError: errorStruct => rej(errorStruct.error),
-  })
+    const client = new WSWebClient({
+      url: 'ws://127.0.0.1:12345',
+      token: 'iamtoken',
+      onError: errorStruct => rej(errorStruct.error),
+    })
 
-  await client.opened
-  ```
+    await client.opened
+    ```
 
 ### Use Router
 
