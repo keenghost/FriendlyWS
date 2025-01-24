@@ -1,5 +1,7 @@
 # Javascript Friendly WebSocket
 
+Use websocket like http.
+
 <p align="center">
     <img src="https://img.shields.io/badge/node-≥18-green" alt="">
     <img src="https://img.shields.io/badge/pnpm-^9-orange" alt="">
@@ -8,6 +10,8 @@
     <img src="https://img.shields.io/github/commit-activity/m/keenghost/FriendlyWS?color=red" alt="">
     <img src="https://img.shields.io/github/stars/keenghost/FriendlyWS?style=social" alt="">
 </p>
+
+<p style="background: #F0F099; padding: 10px; border-left: 3px solid #B5B588; color: #FF0000;">This project is pure ESM, can be only used with esmodule import.</p>
 
 ### Installation
 
