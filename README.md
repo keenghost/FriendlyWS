@@ -17,9 +17,9 @@ pnpm add friendly-ws
 
 ### Usage
 
-- Create Server
+- #### Create Server
 
-  - use internal httpServer and onOpen to continue
+  - ##### use internal httpServer and onOpen to continue
 
     ```typescript
     import { WSNodeServer } from 'friendly-ws'
@@ -36,7 +36,7 @@ pnpm add friendly-ws
     })
     ```
 
-  - use provided httpServer and await opened to continue
+  - ##### use provided httpServer and await opened to continue
 
     ```typescript
     import http from 'http'
@@ -57,9 +57,9 @@ pnpm add friendly-ws
     await wsServer.opened
     ```
 
-- Create Client
+- #### Create Client
 
-  - Node Client
+  - ##### Node Client
 
     ```typescript
     import { WSNodeClient } from 'friendly-ws'
@@ -71,6 +71,8 @@ pnpm add friendly-ws
       onError: errorStruct => rej(errorStruct.error),
     })
     ```
+
+  - ##### Browser Client
 
     ```typescript
     import { WSWebClient } from 'friendly-ws'
@@ -84,49 +86,49 @@ pnpm add friendly-ws
     await client.opened
     ```
 
-### Use Router
+- #### Use Router
 
-- node
+  - ##### Node Router
 
-  ```typescript
-  import { WSClientRouter } from 'friendly-ws'
+    ```typescript
+    import { WSClientRouter } from 'friendly-ws'
 
-  const router = new WSClientRouter()
+    const router = new WSClientRouter()
 
-  router.get<string, string>('request1', async ctx => {
-    const result = await doSomeJob(ctx.request.body)
+    router.get<string, string>('request1', async ctx => {
+      const result = await doSomeJob(ctx.request.body)
 
-    if (result === -1) {
-      ctx.errorMessage = 'oops not right'
-      ctx.errorContent = { operation: 'delete' }
-    }
-  })
+      if (result === -1) {
+        ctx.errorMessage = 'oops not right'
+        ctx.errorContent = { operation: 'delete' }
+      }
+    })
 
-  router.get<{ name: string }, { newName: string }>('request1', async ctx => {
-    const result = await doSomeJob(ctx.request.body.name)
+    router.get<{ name: string }, { newName: string }>('request1', async ctx => {
+      const result = await doSomeJob(ctx.request.body.name)
 
-    if (result === -1) {
-      ctx.errorMessage = 'user can see this message'
-      ctx.errorContent = { userId: 'abcd' }
-      throw new Error('internal error rename failed')
-    }
+      if (result === -1) {
+        ctx.errorMessage = 'user can see this message'
+        ctx.errorContent = { userId: 'abcd' }
+        throw new Error('internal error rename failed')
+      }
 
-    ctx.body = { newName: 'haha' }
-  })
+      ctx.body = { newName: 'haha' }
+    })
 
-  client.use(router.routes())
-  ```
+    client.use(router.routes())
+    ```
 
-- web
+  - ##### Browser Router
 
-  ```typescript
-  import { WSClientRouter } from 'friendly-ws'
+    ```typescript
+    import { WSClientRouter } from 'friendly-ws'
 
-  const router = new WSClientRouter()
+    const router = new WSClientRouter()
 
-  router.get<string, string>('request1', async ctx => {
-    ctx.body = ''
-  })
+    router.get<string, string>('request1', async ctx => {
+      ctx.body = ''
+    })
 
-  webClient.use(router.routes())
-  ```
+    browserClient.use(router.routes())
+    ```
