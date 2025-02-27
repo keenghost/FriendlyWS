@@ -1,7 +1,7 @@
 import tsESLint from 'typescript-eslint'
 
 export default tsESLint.config(...tsESLint.configs.recommended, {
-  files: ['**/*.js', '**/*.cjs', '**/*.ts', '**/*.tsx'],
+  files: ['**/*.js', '**/*.ts'],
   rules: {
     eqeqeq: 'error',
     'newline-before-return': 'error',

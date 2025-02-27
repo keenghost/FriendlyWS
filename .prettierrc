@@ -7,13 +7,12 @@
 
   "overrides": [
     {
-      "files": ["*.js", "*.cjs", "*.ts", "*.jsx", "*.tsx"],
+      "files": ["*.js", "*.ts"],
       "options": {
-        "parser": "typescript",
-
         "importOrder": ["node_modules", "^[./]"],
-        "importOrderSeparation": false,
         "importOrderSortSpecifiers": true,
+        "importOrderCaseInsensitive": true,
+        "importOrderParserPlugins": ["typescript", "decorators"],
 
         "plugins": ["@trivago/prettier-plugin-sort-imports"]
       }
